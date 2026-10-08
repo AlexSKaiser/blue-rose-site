@@ -1,0 +1,80 @@
+/* Blue Rose — página da lista de espera. Cores e fontes de marca/marca.json. */
+@font-face { font-family: "Cormorant"; src: url("fontes/Cormorant-600.ttf") format("truetype"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Cormorant"; src: url("fontes/Cormorant-500-Italic.ttf") format("truetype"); font-weight: 500; font-style: italic; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("fontes/Inter-400.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("fontes/Inter-600.ttf") format("truetype"); font-weight: 600; font-display: swap; }
+
+:root {
+  --azul-profundo: #0B1F3A;
+  --azul-rosa: #3D7BFF;
+  --azul-claro: #A9C4FF;
+  --dourado: #C9A227;
+  --branco: #F5F3EE;
+  --grafite: #1A1A1A;
+  --cartao: #12294A;
+  --linha: rgba(169, 196, 255, 0.18);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--azul-profundo);
+  color: var(--branco);
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--azul-claro); }
+.miolo { max-width: 680px; margin: 0 auto; padding: 0 20px; }
+
+/* topo */
+.topo { text-align: center; padding-top: 56px; padding-bottom: 40px; }
+.topo img { width: 168px; height: 168px; border-radius: 50%; display: block; margin: 0 auto 24px;
+  box-shadow: 0 0 0 1px var(--linha), 0 12px 48px rgba(61, 123, 255, 0.25); }
+.marca { font-family: "Cormorant", Georgia, serif; font-weight: 600; letter-spacing: 0.12em; font-size: 15px;
+  color: var(--azul-claro); margin: 0 0 12px; }
+h1 { font-family: "Cormorant", Georgia, serif; font-weight: 600; font-size: clamp(32px, 8.4vw, 56px); line-height: 1.05;
+  margin: 0 0 16px; }
+.sub { font-size: 18px; color: rgba(245, 243, 238, 0.82); margin: 0 auto 28px; max-width: 30em; }
+.botao { display: inline-block; background: var(--azul-rosa); color: #fff; text-decoration: none; font-weight: 600;
+  padding: 14px 28px; border-radius: 999px; }
+.botao:hover, .botao:focus-visible { background: #2f6bec; }
+.botao:focus-visible { outline: 3px solid var(--azul-claro); outline-offset: 3px; }
+
+/* seções */
+section { padding: 48px 0; border-top: 1px solid var(--linha); }
+h2 { font-family: "Cormorant", Georgia, serif; font-weight: 600; font-size: 34px; line-height: 1.15; margin: 0 0 20px; }
+.manifesto p { margin: 0 0 14px; }
+.manifesto .virada { font-family: "Cormorant", Georgia, serif; font-style: italic; font-weight: 500; font-size: 26px;
+  line-height: 1.3; color: var(--branco); margin-top: 24px; }
+.ouro { color: var(--dourado); }
+
+.beneficios { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; }
+.beneficios li { background: var(--cartao); border: 1px solid var(--linha); border-radius: 14px; padding: 20px 22px; }
+.beneficios b { display: block; font-size: 18px; margin-bottom: 4px; }
+.beneficios span { color: rgba(245, 243, 238, 0.8); }
+.obs { font-size: 14px; color: rgba(245, 243, 238, 0.6); margin-top: 14px; }
+
+.form-caixa { background: var(--cartao); border: 1px solid var(--linha); border-radius: 14px; padding: 8px; min-height: 120px; }
+.form-pendente { padding: 24px; text-align: center; color: rgba(245, 243, 238, 0.75); }
+
+/* rodapé */
+footer { border-top: 1px solid var(--linha); padding: 32px 0 48px; font-size: 14px; color: rgba(245, 243, 238, 0.65); }
+footer nav { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-bottom: 14px; }
+.aviso { border-left: 3px solid var(--dourado); padding-left: 12px; margin: 0 0 14px; color: rgba(245, 243, 238, 0.8); }
+
+/* páginas de texto (legais) */
+.texto { padding: 40px 0 56px; }
+.texto h1 { font-size: 40px; }
+.texto h2 { font-size: 26px; margin-top: 32px; }
+.texto li { margin-bottom: 6px; }
+.versao { color: rgba(245, 243, 238, 0.65); font-size: 14px; margin: -8px 0 24px; }
+.voltar { display: inline-block; margin-bottom: 20px; }
+
+@media (min-width: 720px) {
+  .beneficios { grid-template-columns: repeat(3, 1fr); }
+  .topo { padding-top: 80px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

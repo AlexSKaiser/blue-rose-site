@@ -1,0 +1,7 @@
+Fontes usadas nesta página
+
+Cormorant — Copyright 2015 The Cormorant Project Authors (https://github.com/CatharsisFonts/Cormorant)
+Inter — Copyright 2020 The Inter Project Authors (https://github.com/rsms/inter)
+
+As duas são distribuídas sob a SIL Open Font License, versão 1.1:
+https://openfontlicense.org/open-font-license-official-text/
