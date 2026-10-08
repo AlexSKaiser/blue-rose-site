@@ -1,77 +1,72 @@
-/* Blue Rose — página da lista de espera. Cores e fontes de marca/marca.json. */
-@font-face { font-family: "Cormorant"; src: url("fontes/Cormorant-600.ttf") format("truetype"); font-weight: 600; font-display: swap; }
-@font-face { font-family: "Cormorant"; src: url("fontes/Cormorant-500-Italic.ttf") format("truetype"); font-weight: 500; font-style: italic; font-display: swap; }
-@font-face { font-family: "Inter"; src: url("fontes/Inter-400.ttf") format("truetype"); font-weight: 400; font-display: swap; }
-@font-face { font-family: "Inter"; src: url("fontes/Inter-600.ttf") format("truetype"); font-weight: 600; font-display: swap; }
-
+/* Blue Rose — página da lista de espera.
+   Cor, fonte, espaço e raio vêm de tokens.css (gerado pelo blue-rose-marca; copiado na montagem do site).
+   Regra: aqui só var(--…); nunca cor ou fonte escrita direto. */
 :root {
-  --azul-profundo: #0B1F3A;
-  --azul-rosa: #3D7BFF;
-  --azul-claro: #A9C4FF;
-  --dourado: #C9A227;
-  --branco: #F5F3EE;
-  --grafite: #1A1A1A;
-  --cartao: #12294A;
-  --linha: rgba(169, 196, 255, 0.18);
+  --linha: rgb(var(--cor-azul-claro-rgb) / var(--opacidade-linha));
+  --texto-secundario: rgb(var(--cor-branco-quebrado-rgb) / var(--opacidade-texto-secundario));
+  --texto-apoio: rgb(var(--cor-branco-quebrado-rgb) / var(--opacidade-texto-apoio));
+  --texto-suave: rgb(var(--cor-branco-quebrado-rgb) / var(--opacidade-texto-suave));
 }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  background: var(--azul-profundo);
-  color: var(--branco);
-  font-family: "Inter", system-ui, sans-serif;
+  background: var(--cor-azul-profundo);
+  color: var(--cor-branco-quebrado);
+  font-family: var(--fonte-texto);
   font-size: 17px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
-a { color: var(--azul-claro); }
-.miolo { max-width: 680px; margin: 0 auto; padding: 0 20px; }
+a { color: var(--cor-azul-claro); }
+.miolo { max-width: 680px; margin: 0 auto; padding: 0 var(--espaco-5); }
 
 /* topo */
-.topo { text-align: center; padding-top: 56px; padding-bottom: 40px; }
-.topo img { width: 168px; height: 168px; border-radius: 50%; display: block; margin: 0 auto 24px;
-  box-shadow: 0 0 0 1px var(--linha), 0 12px 48px rgba(61, 123, 255, 0.25); }
-.marca { font-family: "Cormorant", Georgia, serif; font-weight: 600; letter-spacing: 0.12em; font-size: 15px;
-  color: var(--azul-claro); margin: 0 0 12px; }
-h1 { font-family: "Cormorant", Georgia, serif; font-weight: 600; font-size: clamp(32px, 8.4vw, 56px); line-height: 1.05;
-  margin: 0 0 16px; }
-.sub { font-size: 18px; color: rgba(245, 243, 238, 0.82); margin: 0 auto 28px; max-width: 30em; }
-.botao { display: inline-block; background: var(--azul-rosa); color: #fff; text-decoration: none; font-weight: 600;
-  padding: 14px 28px; border-radius: 999px; }
-.botao:hover, .botao:focus-visible { background: #2f6bec; }
-.botao:focus-visible { outline: 3px solid var(--azul-claro); outline-offset: 3px; }
+.topo { text-align: center; padding-top: var(--espaco-14); padding-bottom: var(--espaco-10); }
+.topo img { width: 168px; height: 168px; border-radius: 50%; display: block; margin: 0 auto var(--espaco-6);
+  box-shadow: 0 0 0 1px var(--linha), 0 12px 48px rgb(var(--cor-azul-rosa-rgb) / var(--opacidade-brilho)); }
+.marca { font-family: var(--fonte-titulo); font-weight: 600; letter-spacing: 0.12em; font-size: 15px;
+  color: var(--cor-azul-claro); margin: 0 0 var(--espaco-3); }
+h1 { font-family: var(--fonte-titulo); font-weight: 600; font-size: clamp(32px, 8.4vw, 56px); line-height: 1.05;
+  margin: 0 0 var(--espaco-4); }
+.sub { font-size: 18px; color: var(--texto-secundario); margin: 0 auto 28px; max-width: 30em; }
+.botao { display: inline-block; background: var(--cor-azul-rosa); color: var(--cor-branco-puro); text-decoration: none;
+  font-weight: 600; padding: 14px 28px; border-radius: var(--raio-pilula); }
+.botao:hover, .botao:focus-visible { background: var(--cor-azul-rosa-hover); }
+.botao:focus-visible { outline: 3px solid var(--cor-azul-claro); outline-offset: 3px; }
 
 /* seções */
-section { padding: 48px 0; border-top: 1px solid var(--linha); }
-h2 { font-family: "Cormorant", Georgia, serif; font-weight: 600; font-size: 34px; line-height: 1.15; margin: 0 0 20px; }
+section { padding: var(--espaco-12) 0; border-top: 1px solid var(--linha); }
+h2 { font-family: var(--fonte-titulo); font-weight: 600; font-size: 34px; line-height: 1.15; margin: 0 0 var(--espaco-5); }
 .manifesto p { margin: 0 0 14px; }
-.manifesto .virada { font-family: "Cormorant", Georgia, serif; font-style: italic; font-weight: 500; font-size: 26px;
-  line-height: 1.3; color: var(--branco); margin-top: 24px; }
-.ouro { color: var(--dourado); }
+.manifesto .virada { font-family: var(--fonte-titulo); font-style: italic; font-weight: 500; font-size: 26px;
+  line-height: 1.3; color: var(--cor-branco-quebrado); margin-top: var(--espaco-6); }
+.ouro { color: var(--cor-dourado); }
 
 .beneficios { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; }
-.beneficios li { background: var(--cartao); border: 1px solid var(--linha); border-radius: 14px; padding: 20px 22px; }
-.beneficios b { display: block; font-size: 18px; margin-bottom: 4px; }
-.beneficios span { color: rgba(245, 243, 238, 0.8); }
-.obs { font-size: 14px; color: rgba(245, 243, 238, 0.6); margin-top: 14px; }
+.beneficios li { background: var(--cor-superficie-cartao); border: 1px solid var(--linha); border-radius: var(--raio-cartao);
+  padding: var(--espaco-5) 22px; }
+.beneficios b { display: block; font-size: 18px; margin-bottom: var(--espaco-1); }
+.beneficios span { color: var(--texto-secundario); }
+.obs { font-size: 14px; color: var(--texto-suave); margin-top: 14px; }
 
-.form-caixa { background: var(--cartao); border: 1px solid var(--linha); border-radius: 14px; padding: 8px; min-height: 120px; }
-.form-pendente { padding: 24px; text-align: center; color: rgba(245, 243, 238, 0.75); }
+.form-caixa { background: var(--cor-superficie-cartao); border: 1px solid var(--linha); border-radius: var(--raio-cartao);
+  padding: var(--espaco-2); min-height: 120px; }
+.form-pendente { padding: var(--espaco-6); text-align: center; color: var(--texto-apoio); }
 
 /* rodapé */
-footer { border-top: 1px solid var(--linha); padding: 32px 0 48px; font-size: 14px; color: rgba(245, 243, 238, 0.65); }
-footer nav { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-bottom: 14px; }
-.aviso { border-left: 3px solid var(--dourado); padding-left: 12px; margin: 0 0 14px; color: rgba(245, 243, 238, 0.8); }
+footer { border-top: 1px solid var(--linha); padding: var(--espaco-8) 0 var(--espaco-12); font-size: 14px; color: var(--texto-suave); }
+footer nav { display: flex; flex-wrap: wrap; gap: var(--espaco-2) 18px; margin-bottom: 14px; }
+.aviso { border-left: 3px solid var(--cor-dourado); padding-left: var(--espaco-3); margin: 0 0 14px; color: var(--texto-secundario); }
 
 /* páginas de texto (legais) */
-.texto { padding: 40px 0 56px; }
+.texto { padding: var(--espaco-10) 0 var(--espaco-14); }
 .texto h1 { font-size: 40px; }
-.texto h2 { font-size: 26px; margin-top: 32px; }
+.texto h2 { font-size: 26px; margin-top: var(--espaco-8); }
 .texto li { margin-bottom: 6px; }
-.versao { color: rgba(245, 243, 238, 0.65); font-size: 14px; margin: -8px 0 24px; }
-.voltar { display: inline-block; margin-bottom: 20px; }
+.versao { color: var(--texto-suave); font-size: 14px; margin: calc(-1 * var(--espaco-2)) 0 var(--espaco-6); }
+.voltar { display: inline-block; margin-bottom: var(--espaco-5); }
 
 @media (min-width: 720px) {
   .beneficios { grid-template-columns: repeat(3, 1fr); }

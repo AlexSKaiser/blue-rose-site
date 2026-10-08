@@ -1,0 +1,66 @@
+/* GERADO por blue-rose-marca/gerar.py a partir de tokens/tokens.json. Não edite: edite os tokens e rode python gerar.py. */
+@font-face { font-family: "Cormorant"; src: url("fontes/Cormorant-400.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Cormorant"; src: url("fontes/Cormorant-500-Italic.ttf") format("truetype"); font-weight: 500; font-style: italic; font-display: swap; }
+@font-face { font-family: "Cormorant"; src: url("fontes/Cormorant-600.ttf") format("truetype"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Cormorant"; src: url("fontes/Cormorant-700.ttf") format("truetype"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("fontes/Inter-400.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("fontes/Inter-600.ttf") format("truetype"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("fontes/Inter-700.ttf") format("truetype"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("fontes/Inter-800.ttf") format("truetype"); font-weight: 800; font-style: normal; font-display: swap; }
+:root {
+  --cor-azul-profundo: #0B1F3A;
+  --cor-azul-profundo-rgb: 11 31 58;
+  --cor-azul-escuro: #2F63D9;
+  --cor-azul-escuro-rgb: 47 99 217;
+  --cor-azul-rosa: #3D7BFF;
+  --cor-azul-rosa-rgb: 61 123 255;
+  --cor-azul-rosa-hover: #2F6BEC;
+  --cor-azul-rosa-hover-rgb: 47 107 236;
+  --cor-azul-suave: #7FA6FF;
+  --cor-azul-suave-rgb: 127 166 255;
+  --cor-azul-claro: #A9C4FF;
+  --cor-azul-claro-rgb: 169 196 255;
+  --cor-dourado: #C9A227;
+  --cor-dourado-rgb: 201 162 39;
+  --cor-branco-quebrado: #F5F3EE;
+  --cor-branco-quebrado-rgb: 245 243 238;
+  --cor-branco-puro: #FFFFFF;
+  --cor-branco-puro-rgb: 255 255 255;
+  --cor-grafite: #1A1A1A;
+  --cor-grafite-rgb: 26 26 26;
+  --cor-preto: #000000;
+  --cor-preto-rgb: 0 0 0;
+  --cor-superficie-cartao: #12294A;
+  --cor-superficie-cartao-rgb: 18 41 74;
+  --cor-teste-instagram-claro-fundo: #FAFAFA;
+  --cor-teste-instagram-claro-fundo-rgb: 250 250 250;
+  --cor-teste-instagram-claro-texto: #161616;
+  --cor-teste-instagram-claro-texto-rgb: 22 22 22;
+  --cor-teste-instagram-claro-borda: #CCCCCC;
+  --cor-teste-instagram-claro-borda-rgb: 204 204 204;
+  --cor-teste-instagram-escuro-fundo: #000000;
+  --cor-teste-instagram-escuro-fundo-rgb: 0 0 0;
+  --cor-teste-instagram-escuro-texto: #EEEEEE;
+  --cor-teste-instagram-escuro-texto-rgb: 238 238 238;
+  --cor-teste-instagram-escuro-borda: #444444;
+  --cor-teste-instagram-escuro-borda-rgb: 68 68 68;
+  --opacidade-texto-secundario: 0.82;
+  --opacidade-texto-apoio: 0.75;
+  --opacidade-texto-suave: 0.65;
+  --opacidade-brilho: 0.25;
+  --opacidade-linha: 0.18;
+  --fonte-titulo: "Cormorant", Georgia, serif;
+  --fonte-texto: "Inter", system-ui, sans-serif;
+  --espaco-1: 4px;
+  --espaco-2: 8px;
+  --espaco-3: 12px;
+  --espaco-4: 16px;
+  --espaco-5: 20px;
+  --espaco-6: 24px;
+  --espaco-8: 32px;
+  --espaco-10: 40px;
+  --espaco-12: 48px;
+  --espaco-14: 56px;
+  --raio-cartao: 14px;
+  --raio-pilula: 999px;
+}
