@@ -19,9 +19,10 @@
     return;
   }
   var iframe = document.createElement("iframe");
-  // sem transparentBackground (E043): o texto do Tally é escuro e sumia no fundo azul escuro da página
+  // fundo transparente: o formulário usa o tema da marca no Tally (texto claro, botão azul; tally_formulario.py --tema),
+  // então ele se apoia no fundo do site (23/10/2026). Sem o tema, o texto do Tally é escuro e some (E043).
   iframe.setAttribute("data-tally-src", "https://tally.so/embed/" + encodeURIComponent(id) +
-    "?alignLeft=1&hideTitle=1&dynamicHeight=1&" + repassar.toString());
+    "?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&" + repassar.toString());
   iframe.setAttribute("title", "Formulário da lista de espera da Blue Rose");
   iframe.setAttribute("loading", "lazy");
   iframe.style.width = "100%";
