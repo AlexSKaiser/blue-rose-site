@@ -61,7 +61,7 @@ footer nav { display: flex; flex-wrap: wrap; gap: var(--espaco-2) 18px; margin-b
 .aviso { border-left: 3px solid var(--cor-dourado); padding-left: var(--espaco-3); margin: 0 0 14px; color: var(--texto-secundario); }
 
 /* páginas de texto (legais) */
-.texto { padding: var(--espaco-10) 0 var(--espaco-14); }
+.texto { padding-top: var(--espaco-10); padding-bottom: var(--espaco-14); }
 .texto h1 { font-size: 40px; }
 .texto h2 { font-size: 26px; margin-top: var(--espaco-8); }
 .texto li { margin-bottom: 6px; }
