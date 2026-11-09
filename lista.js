@@ -4,11 +4,19 @@
 (function () {
   var params = new URLSearchParams(window.location.search);
   var origem = (params.get("v") || "bio").replace(/[^a-zA-Z0-9_-]/g, "").slice(0, 60) || "bio";
+  // Indicação (09/11/2026): cada visita ganha um código (6 letras, sorteado aqui, sem cookie e sem guardar nada no
+  // navegador). Ele vai junto na origem ("__cod-…") e vira o link de indicação da pessoa (?ind=…). Quem entra pelo
+  // link de alguém leva "__ind-<código de quem indicou>". A contagem é feita no Notion, pela origem.
+  var ind = (params.get("ind") || "").replace(/[^a-zA-Z0-9]/g, "").slice(0, 8);
+  var meu = codigoNovo();
+  origem = (origem.slice(0, 36) + (ind ? "__ind-" + ind : "") + "__cod-" + meu).slice(0, 60);
   var repassar = new URLSearchParams({ origem: origem });
   ["utm_source", "utm_medium", "utm_campaign"].forEach(function (k) {
     var valor = params.get(k);
     if (valor) repassar.set(k, valor.slice(0, 60));
   });
+
+  mostrarIndicacao(meu);
 
   var caixa = document.getElementById("formulario");
   var id = (window.BLUE_ROSE || {}).tallyFormId;
@@ -33,4 +41,29 @@
   s.src = "https://tally.so/widgets/embed.js";
   s.onload = function () { if (window.Tally) window.Tally.loadEmbeds(); };
   document.body.appendChild(s);
+
+  function codigoNovo() {
+    var letras = "abcdefghjkmnpqrstuvwxyz23456789";
+    var n = new Uint8Array(6);
+    (window.crypto || window.msCrypto).getRandomValues(n);
+    var c = "";
+    for (var i = 0; i < n.length; i++) c += letras[n[i] % letras.length];
+    return c;
+  }
+
+  // O link de indicação aparece embaixo do formulário; depois de entrar, a pessoa manda pros amigos.
+  function mostrarIndicacao(codigo) {
+    var alvo = document.getElementById("indicacao");
+    if (!alvo) return;
+    var link = window.location.origin + window.location.pathname + "?ind=" + codigo;
+    var campo = alvo.querySelector("[data-link]");
+    if (campo) campo.textContent = link;
+    var botao = alvo.querySelector("[data-copiar]");
+    if (botao) botao.addEventListener("click", function () {
+      var feito = function () { botao.textContent = "Copiado"; };
+      if (navigator.share) { navigator.share({ title: "Blue Rose", text: "Entra comigo na lista da Blue Rose:", url: link }).catch(function () {}); return; }
+      if (navigator.clipboard) navigator.clipboard.writeText(link).then(feito, function () {});
+    });
+    alvo.hidden = false;
+  }
 })();

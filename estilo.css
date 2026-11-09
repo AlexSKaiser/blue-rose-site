@@ -53,6 +53,11 @@ h2 { font-family: var(--fonte-titulo); font-weight: 600; font-size: 34px; line-h
 
 .form-caixa { background: var(--cor-superficie-cartao); border: 1px solid var(--linha); border-radius: var(--raio-cartao);
   padding: var(--espaco-2); min-height: 120px; }
+.indicacao { margin-top: var(--espaco-4); padding: var(--espaco-4); border: 1px dashed var(--linha); border-radius: var(--raio-cartao); }
+.indicacao p { margin: 0 0 var(--espaco-2); }
+.indicacao-link { font-size: 14px; color: var(--texto-apoio); word-break: break-all; }
+.indicacao-botao { font: inherit; font-weight: 700; color: var(--cor-azul-profundo); background: var(--cor-azul-rosa); border: 0;
+  border-radius: var(--raio-pilula); padding: var(--espaco-2) var(--espaco-4); cursor: pointer; }
 .form-pendente { padding: var(--espaco-6); text-align: center; color: var(--texto-apoio); }
 
 /* rodapé */
